@@ -1,0 +1,9 @@
+services:
+  api-service:
+    build: .
+    ports:
+      - "5005:5005"
+    environment:
+      - PORT=5005
+      - ORIGIN=http://localhost:3000
+      - MONGODB_URI=mongodb+srv://ivanpereariza:nTghCq78wGiITTl2@conciertos.5tgv4bk.mongodb.net/concerts
