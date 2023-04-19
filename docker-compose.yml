@@ -1,0 +1,15 @@
+services:
+  api-service:
+    build: ./server
+    ports:
+      - "5005:5005"
+    environment:
+      - PORT=5005
+      - ORIGIN=http://localhost:3000
+      - MONGODB_URI=mongodb+srv://ivanpereariza:nTghCq78wGiITTl2@conciertos.5tgv4bk.mongodb.net/concerts
+  frontend-react:
+    build: ./client
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5005/api
